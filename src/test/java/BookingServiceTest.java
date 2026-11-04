@@ -70,4 +70,12 @@ class BookingServiceTest {
 
         assertEquals(2, bookingService.getAllBookings().size());
     }
+
+    @Test
+    void successfulRoomBooking() {
+        // Подготовить сервис и входные данные
+        // Вызвать реальный метод бронирования из проекта
+        // Проверить результат с помощью assertNotNull,
+        // assertEquals, assertTrue или других подходящих assertions
+    }
 }
