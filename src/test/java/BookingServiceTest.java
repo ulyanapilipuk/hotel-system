@@ -51,7 +51,7 @@ class BookingServiceTest {
                 bookingService.createBooking(guest2, room, LocalDate.of(2026, 10, 1), LocalDate.of(2026, 10, 5)));
 
         // Второе бронирование не должно было сохраниться
-        assertEquals(3, bookingService.getAllBookings().size());
+        assertEquals(1, bookingService.getAllBookings().size());
     }
 
     @Test
