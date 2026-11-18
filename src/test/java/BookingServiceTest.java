@@ -71,11 +71,21 @@ class BookingServiceTest {
         assertEquals(2, bookingService.getAllBookings().size());
     }
 
+
     @Test
     void successfulRoomBooking() {
-        // Подготовить сервис и входные данные
-        // Вызвать реальный метод бронирования из проекта
-        // Проверить результат с помощью assertNotNull,
-        // assertEquals, assertTrue или других подходящих assertions
+        Booking booking = bookingService.createBooking(
+                guest1,
+                room,
+                LocalDate.of(2026, 11, 20),
+                LocalDate.of(2026, 11, 25)
+        );
+
+        assertNotNull(booking);
+        assertEquals(guest1, booking.getGuest());
+        assertEquals(room, booking.getRoom());
+        assertEquals(LocalDate.of(2026, 11, 20), booking.getCheckIn());
+        assertEquals(LocalDate.of(2026, 11, 25), booking.getCheckOut());
+        assertEquals(1, bookingService.getAllBookings().size());
     }
 }
