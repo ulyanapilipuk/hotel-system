@@ -86,6 +86,6 @@ class BookingServiceTest {
         assertEquals(room, booking.getRoom());
         assertEquals(LocalDate.of(2026, 11, 20), booking.getCheckIn());
         assertEquals(LocalDate.of(2026, 11, 25), booking.getCheckOut());
-        assertEquals(113, bookingService.getAllBookings().size());
+        assertEquals(1, bookingService.getAllBookings().size());
     }
 }
