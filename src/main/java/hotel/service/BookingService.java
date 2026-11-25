@@ -37,6 +37,10 @@ public class BookingService {
             LocalDate checkIn,
             LocalDate checkOut) {
 
+        if (Boolean.getBoolean("test.booking.error")) {
+            throw new RuntimeException("Test booking error");
+        }
+
         logger.info(
                 "Booking request received: room={}, checkIn={}, checkOut={}",
                 room.getNumber(),
@@ -71,6 +75,7 @@ public class BookingService {
                     "Booking created successfully for room {}",
                     room.getNumber()
             );
+//            logger.error("TEST ERROR: rejected operation");
 
             return savedBooking;
         } catch (RuntimeException exception) {
