@@ -1,19 +1,19 @@
+
 pipeline {
     agent any
 
-        stages {
-            stage('Checkout') {
-                steps {
-                    checkout scm
-                }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
             }
+        }
 
-        stages {
-            stage('Build') {
-                steps {
-                    sh 'mvn compile'
-                }
+        stage('Build') {
+            steps {
+                sh 'mvn compile'
             }
+        }
 
         stage('Static Analysis') {
             steps {
@@ -50,19 +50,19 @@ pipeline {
                 '''
             }
         }
-        
-         post {
-                success {
-                    echo 'Pipeline completed successfully'
-                }
+    }
 
-                failure {
-                    echo 'Pipeline failed. Check Console Output.'
-                }
+    post {
+        success {
+            echo 'Pipeline completed successfully'
+        }
 
-                always {
-                    echo 'Pipeline execution finished'
-                }
-            }
+        failure {
+            echo 'Pipeline failed. Check Console Output.'
+        }
+
+        always {
+            echo 'Pipeline execution finished'
+        }
     }
 }
